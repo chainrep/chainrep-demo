@@ -37,6 +37,10 @@
     outline: none;
   }
 
+  .search-bar > button {
+    font-size: medium;
+  }
+
   .search-bar > i {
     position: absolute;
     left: 1rem;
