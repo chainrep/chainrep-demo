@@ -4,7 +4,7 @@
   const links = [
     { page: "/search", name: "<i class='icofont-search-2'></i> Search" },
     { page: "/report", name: "<i class='icofont-search-document'></i> Report" },
-    { page: "/certification", name: "<i class='icofont-badge'></i> Certification" },
+    { page: "/certificate", name: "<i class='icofont-badge'></i> Certificate" },
     { page: "/about", name: "<i class='icofont-info-circle'></i> About" }
   ];
 </script>
