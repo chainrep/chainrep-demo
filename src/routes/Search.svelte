@@ -1,10 +1,19 @@
 <script lang="ts">
-  let search: string;
+  let searchStr: string;
+
+  const search = async () => {
+    try {
+      // TODO
+    } catch(err) {
+      console.error(err);
+    }
+  };
 </script>
 
 <h1>Search</h1>
 <div class="search-bar">
-  <input type="text" bind:value={search}>
+  <input type="text" bind:value={searchStr}>
+  <button on:click={search}>Search</button>
   <i class="icofont-search-2" />
 </div>
 
@@ -12,6 +21,7 @@
   .search-bar {
     position: relative;
     display: flex;
+    gap: 1rem;
   }
 
   .search-bar > input {
