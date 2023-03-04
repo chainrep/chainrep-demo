@@ -63,7 +63,7 @@
 
 <!-- Optional install splash overlay -->
 {#if installing && ((Date.now() - lastLoad > 1000 * 60 * 60) || justUpdated)}
-  <div id="container" out:fade={{ duration: 1000 }}>
+  <div id="container" out:fade={{ duration: 1000 }} class="gradient-1-2">
     {#if pageLoaded}
       <!-- Icon -->
       <img id="icon" src="favicon.png" alt="">
@@ -129,8 +129,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #222;
     z-index: 200;
+    color: white;
   }
 
   #icon, #spinner {

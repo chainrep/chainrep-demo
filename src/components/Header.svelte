@@ -1,16 +1,49 @@
 <script type="ts">
-  import { link } from "svelte-spa-router";
+
 </script>
 
 <header>
-  <a href="/" use:link>Home</a>
-  <a href="/about" use:link>About</a>
+
+  <!-- Title -->
+  <h1>
+    <i class="icofont-link"></i>
+    ChainRep
+  </h1>
+
+  <div id="connection">
+
+    <!-- Chain -->
+    <select>
+      <option value="eth">Optimism Goerli</option>
+    </select>
+
+    <!-- Wallet -->
+    <button>Connect</button>
+
+  </div>
 </header>
 
 <style>
   header {
-    max-width: 1024px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 1rem;
+    background-color: var(--c4);
+    color: var(--c3);
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  #connection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #connection > * {
+    height: 32px;
   }
 </style>
