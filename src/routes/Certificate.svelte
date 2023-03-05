@@ -101,6 +101,7 @@
   }
 
   .cert {
+    margin-bottom: 1rem;
     padding: 1rem;
     background-color: var(--c3);
     border-radius: var(--border-radius);
