@@ -1,19 +1,34 @@
 <script lang="ts">
+  import type { BigNumberish } from "ethers";
   import { pushNotification } from "../components/Notifications.svelte";
   import Report from "../components/Report.svelte";
+  import { contract } from "../utils/connection";
 
   let searchStr: string;
 
   const search = async () => {
     try {
-      // TODO
-      pushNotification({ message: "Search has not been implemented yet. Please check back soon.", type: "standard" });
+      // TODO: actually implement search
+      // pushNotification({ message: "Search has not been implemented yet. Please check back soon.", type: "standard" });
+
+      if($contract) {
+        const events = await $contract.queryFilter("PublishReport");
+        reports = events.map((e: any) => {
+          console.log(e);
+          return {
+            reportId: e.args.reportId,
+            reviewer: e.args.reviewer,
+            uri: "ipfs://bafkreieb5xpcpwatmqmm2eb6y2f72fx2yokapmrq75axqt3jdoc542dpd4"
+          };
+        });
+      }
+
     } catch(err) {
       console.error(err);
     }
   };
   
-  const reports = [
+  let reports: { reportId: BigNumberish, reviewer: string, uri: string }[] = [
     {
       reportId: 0,
       reviewer: "0xa184aa8488908b43cCf43b5Ef13Ae528693Dfd00",
