@@ -1,5 +1,11 @@
 <script type="ts">
+  import { connectInjected, signer } from "../utils/connection";
 
+  const connect = () => {
+    connectInjected().catch((err) => {
+      console.error(err);
+    });
+  }
 </script>
 
 <header>
@@ -18,7 +24,15 @@
     </select>
 
     <!-- Wallet -->
-    <button>Connect</button>
+    {#if !$signer}
+      <button on:click={connect}>Connect</button>
+    {:else}
+      {#await $signer.getAddress()}
+        <button>Connecting...</button>
+      {:then address} 
+        <button>{address.slice(0, 6)}...{address.slice(-4)}</button>
+      {/await}
+    {/if}
 
   </div>
 </header>
