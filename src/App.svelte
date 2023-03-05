@@ -3,6 +3,7 @@
   import Body from "./components/Body.svelte";
   import ServiceWorker from "./components/ServiceWorker.svelte";
   import Wrapper from "./components/Wrapper.svelte";
+  import Notifications from "./components/Notifications.svelte";
 </script>
 
 <!-- Wrapper -->
@@ -15,6 +16,9 @@
   <Body />
 
 </Wrapper>
+
+<!-- Notifications -->
+<Notifications />
 
 <!-- Service Worker -->
 <ServiceWorker />
