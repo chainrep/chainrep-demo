@@ -31,12 +31,14 @@
 
   .nav-link {
     position: relative;
+    left: 0;
+    transition: all 0.25s ease-out;
   }
 
   .nav-link::after {
     content: "";
     position: absolute;
-    inset: -5px;
+    inset: -7px;
     background-color: var(--c3);
     border-radius: var(--border-radius);
   }
