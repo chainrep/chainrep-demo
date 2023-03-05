@@ -13,7 +13,7 @@
   <!-- Title -->
   <h1>
     <i class="icofont-link"></i>
-    ChainRep
+    chainrep
   </h1>
 
   <div id="connection">
