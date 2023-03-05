@@ -9,18 +9,26 @@
   const search = async () => {
     try {
       // TODO: actually implement search
-      // pushNotification({ message: "Search has not been implemented yet. Please check back soon.", type: "standard" });
-
-      if($contract) {
-        const events = await $contract.queryFilter("PublishReport");
-        reports = events.map((e: any) => {
-          console.log(e);
-          return {
+      const c = $contract;
+      if(c) {
+        let filter: any = null;
+        if(searchStr.startsWith("0x")) {
+          filter = c.filters.ContractReported(null, searchStr)
+        } else if(searchStr.includes(".")) {
+          filter = c.filters.DomainReported(null, searchStr)
+        } else {
+          filter = c.filters.TagReported(null, searchStr)
+        }
+        const events = (await c.queryFilter(filter)).slice(-10);
+        const newReports = await Promise.all(events.map(async (e: any) => {
+          const report = await c.getReport(e.args.reportId);
+          return report.published ? {
             reportId: e.args.reportId,
-            reviewer: e.args.reviewer,
-            uri: "ipfs://bafkreieb5xpcpwatmqmm2eb6y2f72fx2yokapmrq75axqt3jdoc542dpd4"
-          };
-        });
+            reviewer: report.reviewer,
+            uri: report.uri
+          } : null;
+        }));
+        reports = newReports.filter(x => !!x) as typeof reports;
       }
 
     } catch(err) {
@@ -28,18 +36,12 @@
     }
   };
   
-  let reports: { reportId: BigNumberish, reviewer: string, uri: string }[] = [
-    {
-      reportId: 0,
-      reviewer: "0xa184aa8488908b43cCf43b5Ef13Ae528693Dfd00",
-      uri: "ipfs://bafkreieb5xpcpwatmqmm2eb6y2f72fx2yokapmrq75axqt3jdoc542dpd4"
-    }
-  ];
+  let reports: { reportId: BigNumberish, reviewer: string, uri: string }[] = [];
 </script>
 
 <h1>Search Reports</h1>
 <div class="search-bar">
-  <input type="text" bind:value={searchStr} placeholder="Search by address, domain, or tags">
+  <input type="text" bind:value={searchStr} placeholder="Search by address, domain, or tags" on:keypress={e => (e.key === "Enter") ? search() : null}>
   <button on:click={search}>Search</button>
   <i class="icofont-search-2" />
 </div>
