@@ -1,11 +1,13 @@
 <script lang="ts">
   import { link, location } from "svelte-spa-router";
 
+  $: loc = ($location === "/" ? "/about" : location);
+
   export let page: string;
   export let name: string;
 </script>
 
-<div class="nav-link" class:selected={page === $location}>
+<div class="nav-link" class:selected={page === loc}>
   <a href="{page}" class="gradient-1-2" use:link>
     {@html name}
   </a>

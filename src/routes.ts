@@ -5,8 +5,9 @@ import CertificateSvelte from "./routes/Certificate.svelte";
 import NotFoundSvelte from "./routes/NotFound.svelte";
 
 export const routes = {
-  "/search": SearchSvelte,
+  "/": AboutSvelte,
   "/about": AboutSvelte,
+  "/search": SearchSvelte,
   "/report": ReportSvelte,
   "/certificate": CertificateSvelte,
   "*": NotFoundSvelte
