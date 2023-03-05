@@ -19398,7 +19398,7 @@ var app = (function () {
     			t5 = text("Our goal is to improve web3 security for users by creating the most comprehensive dataset of scams and vulnerabilities. Since ");
     			strong1 = element("strong");
     			strong1.textContent = "chainrep";
-    			t7 = text(" is an permissionless protocol, everyone can leverage and contribute to a shared source of information.");
+    			t7 = text(" is a permissionless protocol, everyone can leverage and contribute to a shared source of information.");
     			t8 = space();
     			h31 = element("h3");
     			t9 = text("Let's make web3 ");
@@ -19417,14 +19417,14 @@ var app = (function () {
     			add_location(strong1, file$a, 6, 128, 295);
     			add_location(p, file$a, 5, 0, 163);
     			attr_dev(span, "class", "svelte-19l6kgo");
-    			add_location(span, file$a, 10, 18, 466);
+    			add_location(span, file$a, 10, 18, 465);
     			attr_dev(h31, "class", "safu svelte-19l6kgo");
-    			add_location(h31, file$a, 9, 0, 430);
-    			add_location(h2, file$a, 13, 0, 501);
+    			add_location(h31, file$a, 9, 0, 429);
+    			add_location(h2, file$a, 13, 0, 500);
     			attr_dev(img, "class", "diagram svelte-19l6kgo");
     			if (!src_url_equal(img.src, img_src_value = "img/diagram.png")) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", "chainrep protocol diagram");
-    			add_location(img, file$a, 14, 0, 523);
+    			add_location(img, file$a, 14, 0, 522);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

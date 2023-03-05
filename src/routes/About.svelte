@@ -4,7 +4,7 @@
 </h3>
 
 <p>
-  Our goal is to improve web3 security for users by creating the most comprehensive dataset of scams and vulnerabilities. Since <strong>chainrep</strong> is an permissionless protocol, everyone can leverage and contribute to a shared source of information.
+  Our goal is to improve web3 security for users by creating the most comprehensive dataset of scams and vulnerabilities. Since <strong>chainrep</strong> is a permissionless protocol, everyone can leverage and contribute to a shared source of information.
 </p>
 
 <h3 class="safu">
