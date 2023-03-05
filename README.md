@@ -1,5 +1,5 @@
-# svelte-static-spa
-A template repository for building a single page web app (SPA) with Svelte.
+# chainrep-demo
+A demo interface to interact with the chainrep protocol.
 
 ## Installation
 
