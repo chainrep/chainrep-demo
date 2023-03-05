@@ -3,10 +3,10 @@ import { writable, get } from "svelte/store";
 import { pushNotification } from "../components/Notifications.svelte";
 import ChainRepABI from "./abi/chainrep";
 
-const chain = 5; // Goerli
-const contractAddress = "0xad5989448181b3ea613a32c0e5442780cf8805ea" // Goerli
-// const chain = 420; // OP Goerli
-// const contractAddress = "0x43047BC64CE59Ea68fc983e0C3Ded63C9bF9A716"; // OP Goerli
+// const chain = 5; // Goerli
+// const contractAddress = "0xad5989448181b3ea613a32c0e5442780cf8805ea" // Goerli
+const chain = 420; // OP Goerli
+const contractAddress = "0x43047BC64CE59Ea68fc983e0C3Ded63C9bF9A716"; // OP Goerli
 
 export const signer = writable<ethers.Signer | null>(null);
 export const contract = writable<ethers.Contract | null>(null);
