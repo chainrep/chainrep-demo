@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { pushNotification } from "../components/Notifications.svelte";
   import Report from "../components/Report.svelte";
 
   let searchStr: string;
@@ -6,6 +7,7 @@
   const search = async () => {
     try {
       // TODO
+      pushNotification({ message: "Search has not been implemented yet. Please check back soon.", type: "standard" });
     } catch(err) {
       console.error(err);
     }
@@ -22,7 +24,7 @@
 
 <h1>Search Reports</h1>
 <div class="search-bar">
-  <input type="text" bind:value={searchStr}>
+  <input type="text" bind:value={searchStr} placeholder="Search by address, domain, or tags">
   <button on:click={search}>Search</button>
   <i class="icofont-search-2" />
 </div>
