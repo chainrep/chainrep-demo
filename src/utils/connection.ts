@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import { writable, get } from "svelte/store";
+import { pushNotification } from "../components/Notifications.svelte";
 
 export const signer = writable<ethers.Signer | null>(null);
 
@@ -10,7 +11,9 @@ export const connectInjected = async () => {
   }
   const browserProvider = new ethers.BrowserProvider(ethereum, "any");
   await browserProvider.send("eth_requestAccounts", []);
-  signer.set(await browserProvider.getSigner());
+  const newSigner = await browserProvider.getSigner();
+  signer.set(newSigner);
+  pushNotification({ message: `Connected: ${await newSigner.getAddress()}`, type: "success" });
 };
 
 // Function to switch chains:
