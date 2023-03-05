@@ -12,6 +12,6 @@
     flex-grow: 1;
     padding: 2rem 5rem;
     overflow: auto;
-    box-shadow: inset 3px 3px 7px #0004;
+    box-shadow: inset 3px 3px 7px var(--shadow-color);
   }
 </style>
