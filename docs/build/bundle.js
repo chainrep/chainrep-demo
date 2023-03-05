@@ -16753,7 +16753,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "id", "notification");
-    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*$notification*/ ctx[0].type) + " svelte-hj12lk"));
+    			attr_dev(div, "class", div_class_value = "" + (null_to_empty(/*$notification*/ ctx[0].type) + " svelte-ya9dri"));
     			add_location(div, file$g, 32, 4, 1117);
     		},
     		m: function mount(target, anchor) {
@@ -16768,7 +16768,7 @@ var app = (function () {
     		},
     		p: function update(ctx, dirty) {
     			if ((!current || dirty & /*$notification*/ 1) && raw_value !== (raw_value = /*$notification*/ ctx[0].message + "")) div.innerHTML = raw_value;
-    			if (!current || dirty & /*$notification*/ 1 && div_class_value !== (div_class_value = "" + (null_to_empty(/*$notification*/ ctx[0].type) + " svelte-hj12lk"))) {
+    			if (!current || dirty & /*$notification*/ 1 && div_class_value !== (div_class_value = "" + (null_to_empty(/*$notification*/ ctx[0].type) + " svelte-ya9dri"))) {
     				attr_dev(div, "class", div_class_value);
     			}
     		},
@@ -17081,9 +17081,9 @@ var app = (function () {
     			t1 = space();
     			if (if_block1) if_block1.c();
     			if_block1_anchor = empty$1();
-    			attr_dev(h3, "class", h3_class_value = "" + (null_to_empty(/*$selectedNotification*/ ctx[1].type) + " svelte-hj12lk"));
+    			attr_dev(h3, "class", h3_class_value = "" + (null_to_empty(/*$selectedNotification*/ ctx[1].type) + " svelte-ya9dri"));
     			add_location(h3, file$g, 48, 6, 1536);
-    			attr_dev(p, "class", "full-message svelte-hj12lk");
+    			attr_dev(p, "class", "full-message svelte-ya9dri");
     			add_location(p, file$g, 63, 6, 2047);
     		},
     		m: function mount(target, anchor) {
@@ -17109,7 +17109,7 @@ var app = (function () {
     				}
     			}
 
-    			if (dirty & /*$selectedNotification*/ 2 && h3_class_value !== (h3_class_value = "" + (null_to_empty(/*$selectedNotification*/ ctx[1].type) + " svelte-hj12lk"))) {
+    			if (dirty & /*$selectedNotification*/ 2 && h3_class_value !== (h3_class_value = "" + (null_to_empty(/*$selectedNotification*/ ctx[1].type) + " svelte-ya9dri"))) {
     				attr_dev(h3, "class", h3_class_value);
     			}
 
@@ -17414,7 +17414,368 @@ var app = (function () {
     	}
     }
 
+    const abi = [
+        { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "reportId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "contractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "ContractReported",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "certificateId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "authority",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                }
+            ],
+            "name": "CreateCertificate",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "reportId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "domain",
+                    "type": "string"
+                }
+            ],
+            "name": "DomainReported",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "certificateId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "authority",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reviewer",
+                    "type": "address"
+                }
+            ],
+            "name": "IssueCertificate",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "reportId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reviewer",
+                    "type": "address"
+                }
+            ],
+            "name": "PublishReport",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "certificateId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "authority",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reviewer",
+                    "type": "address"
+                }
+            ],
+            "name": "RevokeCertificate",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "reportId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "tag",
+                    "type": "string"
+                }
+            ],
+            "name": "TagReported",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "certificateId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                }
+            ],
+            "name": "TransferCertificateAuthority",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "reportId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "reviewer",
+                    "type": "address"
+                }
+            ],
+            "name": "UnPublishReport",
+            "type": "event"
+        },
+        {
+            "inputs": [{ "internalType": "string", "name": "name", "type": "string" }],
+            "name": "createCertificate",
+            "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "contractAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "certificateIds",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "getCertifiedContractReports",
+            "outputs": [
+                {
+                    "components": [
+                        { "internalType": "uint256", "name": "reportId", "type": "uint256" },
+                        { "internalType": "address", "name": "reviewer", "type": "address" },
+                        { "internalType": "string", "name": "uri", "type": "string" },
+                        { "internalType": "bool", "name": "published", "type": "bool" }
+                    ],
+                    "internalType": "struct IChainRep.Report[]",
+                    "name": "",
+                    "type": "tuple[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "uint256", "name": "reportId", "type": "uint256" }
+            ],
+            "name": "getReport",
+            "outputs": [
+                {
+                    "components": [
+                        { "internalType": "uint256", "name": "reportId", "type": "uint256" },
+                        { "internalType": "address", "name": "reviewer", "type": "address" },
+                        { "internalType": "string", "name": "uri", "type": "string" },
+                        { "internalType": "bool", "name": "published", "type": "bool" }
+                    ],
+                    "internalType": "struct IChainRep.Report",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "address", "name": "authority", "type": "address" },
+                { "internalType": "uint256", "name": "certificateId", "type": "uint256" }
+            ],
+            "name": "isCertificateAuthority",
+            "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "address", "name": "reviewer", "type": "address" },
+                { "internalType": "uint256", "name": "certificateId", "type": "uint256" }
+            ],
+            "name": "isCertified",
+            "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "address", "name": "reviewer", "type": "address" },
+                { "internalType": "uint256", "name": "reportId", "type": "uint256" }
+            ],
+            "name": "isReviewer",
+            "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "uint256", "name": "certificateId", "type": "uint256" },
+                { "internalType": "address", "name": "reviewer", "type": "address" }
+            ],
+            "name": "issueCertificate",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "numCertificates",
+            "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "numReports",
+            "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "contractAddresses",
+                    "type": "address[]"
+                },
+                { "internalType": "string[]", "name": "domains", "type": "string[]" },
+                { "internalType": "string[]", "name": "tags", "type": "string[]" },
+                { "internalType": "string", "name": "uri", "type": "string" }
+            ],
+            "name": "publishReport",
+            "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "uint256", "name": "certificateId", "type": "uint256" },
+                { "internalType": "address", "name": "reviewer", "type": "address" }
+            ],
+            "name": "revokeCertificate",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "uint256", "name": "certificateId", "type": "uint256" },
+                { "internalType": "address", "name": "to", "type": "address" }
+            ],
+            "name": "transferCertificateAuthority",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                { "internalType": "uint256", "name": "reportId", "type": "uint256" }
+            ],
+            "name": "unPublishReport",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ];
+
+    // const chain = 5; // Goerli
+    // const contractAddress = "0xad5989448181b3ea613a32c0e5442780cf8805ea" // Goerli
+    const chain = 420; // OP Goerli
+    const contractAddress = "0x43047BC64CE59Ea68fc983e0C3Ded63C9bF9A716"; // OP Goerli
     const signer = writable(null);
+    const contract = writable(null);
     // Injected Wallet:
     const connectInjected = async () => {
         if (!("ethereum" in window)) {
@@ -17423,13 +17784,39 @@ var app = (function () {
         const browserProvider = new BrowserProvider(ethereum, "any");
         await browserProvider.send("eth_requestAccounts", []);
         const newSigner = await browserProvider.getSigner();
+        console.log(newSigner);
         signer.set(newSigner);
+        await switchChain(chain);
+        contract.set(new Contract(contractAddress, abi, newSigner));
         pushNotification({ message: `Connected: ${await newSigner.getAddress()}`, type: "success" });
+    };
+    window.addEventListener("load", () => connectInjected().catch(console.error));
+    // Function to switch chains:
+    const switchChain = async (chain) => {
+        const signerState = get_store_value(signer);
+        if (!signerState)
+            throw new Error("Signer does not exist");
+        if (!signerState.provider)
+            throw new Error("Signer does not have a provider");
+        const chainId = (await signerState.provider.getNetwork()).chainId;
+        if (chainId.toString() != "" + chain) {
+            const hexChainId = `0x${chain.toString(16)}`;
+            const browserProvider = new BrowserProvider(ethereum, "any");
+            try {
+                await browserProvider.send('wallet_switchEthereumChain', [{ chainId: hexChainId }]);
+                await connectInjected();
+            }
+            catch (switchError) {
+                // This error code indicates that the chain has not been added to MetaMask.
+                console.error(switchError);
+                alert(`Failed to switch to chain: ${chain}`);
+            }
+        }
     };
 
     /* src/components/Header.svelte generated by Svelte v3.55.1 */
 
-    const { console: console_1$3 } = globals;
+    const { console: console_1$6 } = globals;
     const file$f = "src/components/Header.svelte";
 
     // (27:4) {:else}
@@ -17728,7 +18115,7 @@ var app = (function () {
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$3.warn(`<Header> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$6.warn(`<Header> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$capture_state = () => ({
@@ -17989,7 +18376,7 @@ var app = (function () {
 
     /* node_modules/svelte-spa-router/Router.svelte generated by Svelte v3.55.1 */
 
-    const { Error: Error_1, Object: Object_1, console: console_1$2 } = globals;
+    const { Error: Error_1, Object: Object_1, console: console_1$5 } = globals;
 
     // (267:0) {:else}
     function create_else_block(ctx) {
@@ -18769,7 +19156,7 @@ var app = (function () {
     	const writable_props = ['routes', 'prefix', 'restoreScrollState'];
 
     	Object_1.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$2.warn(`<Router> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$5.warn(`<Router> was created with unknown prop '${key}'`);
     	});
 
     	function routeEvent_handler(event) {
@@ -18921,10 +19308,10 @@ var app = (function () {
     			a = element("a");
     			attr_dev(a, "href", /*page*/ ctx[0]);
     			attr_dev(a, "class", "gradient-1-2 svelte-j2n6bu");
-    			add_location(a, file$d, 7, 2, 222);
+    			add_location(a, file$d, 7, 2, 223);
     			attr_dev(div, "class", "nav-link svelte-j2n6bu");
     			toggle_class(div, "selected", /*page*/ ctx[0] === /*loc*/ ctx[2]);
-    			add_location(div, file$d, 6, 0, 167);
+    			add_location(div, file$d, 6, 0, 168);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19021,7 +19408,7 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*$location*/ 8) {
-    			$$invalidate(2, loc = $location === "/" ? "/about" : location$1);
+    			$$invalidate(2, loc = $location === "/" ? "/about" : $location);
     		}
     	};
 
@@ -19061,14 +19448,14 @@ var app = (function () {
     /* src/components/Nav.svelte generated by Svelte v3.55.1 */
     const file$c = "src/components/Nav.svelte";
 
-    function get_each_context$2(ctx, list, i) {
+    function get_each_context$3(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[1] = list[i];
     	return child_ctx;
     }
 
     // (11:2) {#each links as link}
-    function create_each_block$2(ctx) {
+    function create_each_block$3(ctx) {
     	let navlink;
     	let current;
     	const navlink_spread_levels = [/*link*/ ctx[1]];
@@ -19111,7 +19498,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_each_block$2.name,
+    		id: create_each_block$3.name,
     		type: "each",
     		source: "(11:2) {#each links as link}",
     		ctx
@@ -19128,7 +19515,7 @@ var app = (function () {
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
-    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    		each_blocks[i] = create_each_block$3(get_each_context$3(ctx, each_value, i));
     	}
 
     	const out = i => transition_out(each_blocks[i], 1, 1, () => {
@@ -19165,13 +19552,13 @@ var app = (function () {
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
-    					const child_ctx = get_each_context$2(ctx, each_value, i);
+    					const child_ctx = get_each_context$3(ctx, each_value, i);
 
     					if (each_blocks[i]) {
     						each_blocks[i].p(child_ctx, dirty);
     						transition_in(each_blocks[i], 1);
     					} else {
-    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i] = create_each_block$3(child_ctx);
     						each_blocks[i].c();
     						transition_in(each_blocks[i], 1);
     						each_blocks[i].m(nav, null);
@@ -19507,10 +19894,99 @@ var app = (function () {
 
     /* src/components/Report.svelte generated by Svelte v3.55.1 */
 
+    const { console: console_1$4 } = globals;
     const file$9 = "src/components/Report.svelte";
 
+    function get_each_context$2(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[7] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[10] = list[i];
+    	return child_ctx;
+    }
+
+    // (33:4) {#each tags as tag}
+    function create_each_block_1(ctx) {
+    	let span;
+    	let t_value = /*tag*/ ctx[10] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			span = element("span");
+    			t = text(t_value);
+    			attr_dev(span, "class", "tag svelte-p69p45");
+    			add_location(span, file$9, 33, 6, 1135);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(span);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(33:4) {#each tags as tag}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (42:4) {#each certs as cert}
+    function create_each_block$2(ctx) {
+    	let i;
+    	let i_title_value;
+    	let style_color = `hsla(${Math.floor(parseInt(/*cert*/ ctx[7]) % 8 * 360 / 8)}, 80%, 50%, 1)`;
+
+    	const block = {
+    		c: function create() {
+    			i = element("i");
+    			attr_dev(i, "class", "icofont-badge svelte-p69p45");
+    			attr_dev(i, "title", i_title_value = "#" + /*cert*/ ctx[7]);
+    			set_style(i, "color", style_color);
+    			add_location(i, file$9, 42, 6, 1373);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, i, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*certs*/ 8 && i_title_value !== (i_title_value = "#" + /*cert*/ ctx[7])) {
+    				attr_dev(i, "title", i_title_value);
+    			}
+
+    			if (dirty & /*certs*/ 8 && style_color !== (style_color = `hsla(${Math.floor(parseInt(/*cert*/ ctx[7]) % 8 * 360 / 8)}, 80%, 50%, 1)`)) {
+    				set_style(i, "color", style_color);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(i);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$2.name,
+    		type: "each",
+    		source: "(42:4) {#each certs as cert}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
     function create_fragment$a(ctx) {
-    	let div2;
+    	let div3;
     	let h3;
     	let span0;
     	let t0;
@@ -19524,16 +20000,33 @@ var app = (function () {
     	let t5;
     	let t6;
     	let div0;
-    	let strong;
-    	let t8;
-    	let a;
-    	let t9;
-    	let t10;
+    	let t7;
     	let div1;
+    	let strong;
+    	let t9;
+    	let a;
+    	let t10;
+    	let t11;
+    	let div2;
+    	let each_value_1 = /*tags*/ ctx[4];
+    	validate_each_argument(each_value_1);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	let each_value = /*certs*/ ctx[3];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$2(get_each_context$2(ctx, each_value, i));
+    	}
 
     	const block = {
     		c: function create() {
-    			div2 = element("div");
+    			div3 = element("div");
     			h3 = element("h3");
     			span0 = element("span");
     			t0 = text("#");
@@ -19545,37 +20038,52 @@ var app = (function () {
     			t5 = text(t5_value);
     			t6 = space();
     			div0 = element("div");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			t7 = space();
+    			div1 = element("div");
     			strong = element("strong");
     			strong.textContent = "Full Report:";
-    			t8 = space();
+    			t9 = space();
     			a = element("a");
-    			t9 = text(/*uri*/ ctx[2]);
-    			t10 = space();
-    			div1 = element("div");
-    			attr_dev(span0, "class", "id svelte-devkln");
-    			add_location(span0, file$9, 8, 4, 186);
+    			t10 = text(/*uri*/ ctx[2]);
+    			t11 = space();
+    			div2 = element("div");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(span0, "class", "id svelte-p69p45");
+    			add_location(span0, file$9, 28, 4, 960);
     			attr_dev(span1, "class", "reviewer");
-    			add_location(span1, file$9, 9, 4, 226);
-    			attr_dev(h3, "class", "svelte-devkln");
-    			add_location(h3, file$9, 7, 2, 177);
-    			add_location(strong, file$9, 12, 4, 342);
+    			add_location(span1, file$9, 29, 4, 1000);
+    			attr_dev(h3, "class", "svelte-p69p45");
+    			add_location(h3, file$9, 27, 2, 951);
+    			attr_dev(div0, "class", "tags");
+    			add_location(div0, file$9, 31, 2, 1086);
+    			add_location(strong, file$9, 37, 4, 1219);
     			attr_dev(a, "href", /*uri*/ ctx[2]);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noreferrer");
-    			add_location(a, file$9, 13, 4, 376);
-    			attr_dev(div0, "class", "full-report svelte-devkln");
-    			add_location(div0, file$9, 11, 2, 312);
-    			add_location(div1, file$9, 15, 2, 444);
-    			attr_dev(div2, "id", "report");
-    			attr_dev(div2, "class", "svelte-devkln");
-    			add_location(div2, file$9, 6, 0, 157);
+    			add_location(a, file$9, 38, 4, 1253);
+    			attr_dev(div1, "class", "full-report svelte-p69p45");
+    			add_location(div1, file$9, 36, 2, 1189);
+    			attr_dev(div2, "class", "certs svelte-p69p45");
+    			add_location(div2, file$9, 40, 2, 1321);
+    			attr_dev(div3, "id", "report");
+    			attr_dev(div3, "class", "svelte-p69p45");
+    			add_location(div3, file$9, 26, 0, 931);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div2, anchor);
-    			append_dev(div2, h3);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, h3);
     			append_dev(h3, span0);
     			append_dev(span0, t0);
     			append_dev(span0, t1);
@@ -19584,29 +20092,91 @@ var app = (function () {
     			append_dev(span1, t3);
     			append_dev(span1, t4);
     			append_dev(span1, t5);
-    			append_dev(div2, t6);
-    			append_dev(div2, div0);
-    			append_dev(div0, strong);
-    			append_dev(div0, t8);
-    			append_dev(div0, a);
-    			append_dev(a, t9);
-    			append_dev(div2, t10);
-    			append_dev(div2, div1);
+    			append_dev(div3, t6);
+    			append_dev(div3, div0);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(div0, null);
+    			}
+
+    			append_dev(div3, t7);
+    			append_dev(div3, div1);
+    			append_dev(div1, strong);
+    			append_dev(div1, t9);
+    			append_dev(div1, a);
+    			append_dev(a, t10);
+    			append_dev(div3, t11);
+    			append_dev(div3, div2);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(div2, null);
+    			}
     		},
     		p: function update(ctx, [dirty]) {
     			if (dirty & /*reportId*/ 1) set_data_dev(t1, /*reportId*/ ctx[0]);
     			if (dirty & /*reviewer*/ 2 && t3_value !== (t3_value = /*reviewer*/ ctx[1].slice(0, 6) + "")) set_data_dev(t3, t3_value);
     			if (dirty & /*reviewer*/ 2 && t5_value !== (t5_value = /*reviewer*/ ctx[1].slice(-4) + "")) set_data_dev(t5, t5_value);
-    			if (dirty & /*uri*/ 4) set_data_dev(t9, /*uri*/ ctx[2]);
+
+    			if (dirty & /*tags*/ 16) {
+    				each_value_1 = /*tags*/ ctx[4];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(div0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_1.length;
+    			}
+
+    			if (dirty & /*uri*/ 4) set_data_dev(t10, /*uri*/ ctx[2]);
 
     			if (dirty & /*uri*/ 4) {
     				attr_dev(a, "href", /*uri*/ ctx[2]);
+    			}
+
+    			if (dirty & /*certs, Math, parseInt*/ 8) {
+    				each_value = /*certs*/ ctx[3];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$2(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$2(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(div2, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
     			}
     		},
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(div3);
+    			destroy_each(each_blocks_1, detaching);
+    			destroy_each(each_blocks, detaching);
     		}
     	};
 
@@ -19622,30 +20192,48 @@ var app = (function () {
     }
 
     function instance$a($$self, $$props, $$invalidate) {
+    	let $contract;
+    	validate_store(contract, 'contract');
+    	component_subscribe($$self, contract, $$value => $$invalidate(5, $contract = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Report', slots, []);
     	let { reportId } = $$props;
     	let { reviewer } = $$props;
     	let { uri } = $$props;
+    	let certs = [];
+    	let tags = [];
+
+    	const getData = async () => {
+    		if ($contract) {
+    			const c = $contract;
+    			const certFilter = c.filters.IssueCertificate(null, null, reviewer);
+    			const certEvents = await c.queryFilter(certFilter);
+    			$$invalidate(3, certs = certEvents.map(e => "" + e.args.certificateId));
+    		} // TODO: edit contract to emit tag string as well as indexed tag
+    		// const tagFilter = c.filters.TagReported(reportId);
+    	}; // const tagEvents = await c.queryFilter(tagFilter);
+    	// tags = tagEvents.map((e: any) => {
+    	//   console.log(e);
+    	//   return e.args.tag;
 
     	$$self.$$.on_mount.push(function () {
     		if (reportId === undefined && !('reportId' in $$props || $$self.$$.bound[$$self.$$.props['reportId']])) {
-    			console.warn("<Report> was created without expected prop 'reportId'");
+    			console_1$4.warn("<Report> was created without expected prop 'reportId'");
     		}
 
     		if (reviewer === undefined && !('reviewer' in $$props || $$self.$$.bound[$$self.$$.props['reviewer']])) {
-    			console.warn("<Report> was created without expected prop 'reviewer'");
+    			console_1$4.warn("<Report> was created without expected prop 'reviewer'");
     		}
 
     		if (uri === undefined && !('uri' in $$props || $$self.$$.bound[$$self.$$.props['uri']])) {
-    			console.warn("<Report> was created without expected prop 'uri'");
+    			console_1$4.warn("<Report> was created without expected prop 'uri'");
     		}
     	});
 
     	const writable_props = ['reportId', 'reviewer', 'uri'];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Report> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$4.warn(`<Report> was created with unknown prop '${key}'`);
     	});
 
     	$$self.$$set = $$props => {
@@ -19654,19 +20242,37 @@ var app = (function () {
     		if ('uri' in $$props) $$invalidate(2, uri = $$props.uri);
     	};
 
-    	$$self.$capture_state = () => ({ reportId, reviewer, uri });
+    	$$self.$capture_state = () => ({
+    		contract,
+    		reportId,
+    		reviewer,
+    		uri,
+    		certs,
+    		tags,
+    		getData,
+    		$contract
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ('reportId' in $$props) $$invalidate(0, reportId = $$props.reportId);
     		if ('reviewer' in $$props) $$invalidate(1, reviewer = $$props.reviewer);
     		if ('uri' in $$props) $$invalidate(2, uri = $$props.uri);
+    		if ('certs' in $$props) $$invalidate(3, certs = $$props.certs);
+    		if ('tags' in $$props) $$invalidate(4, tags = $$props.tags);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [reportId, reviewer, uri];
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*reportId, reviewer*/ 3) {
+    			// TODO: fetch report info (addresses, tags, domains, certifications)
+    			(getData().catch(console.error));
+    		}
+    	};
+
+    	return [reportId, reviewer, uri, certs, tags];
     }
 
     class Report$1 extends SvelteComponentDev {
@@ -19709,20 +20315,20 @@ var app = (function () {
 
     /* src/routes/Search.svelte generated by Svelte v3.55.1 */
 
-    const { console: console_1$1 } = globals;
+    const { console: console_1$3 } = globals;
     const file$8 = "src/routes/Search.svelte";
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[4] = list[i];
+    	child_ctx[6] = list[i];
     	return child_ctx;
     }
 
-    // (29:2) {#each reports as report}
+    // (48:2) {#each reports as report}
     function create_each_block$1(ctx) {
     	let report;
     	let current;
-    	const report_spread_levels = [/*report*/ ctx[4]];
+    	const report_spread_levels = [/*report*/ ctx[6]];
     	let report_props = {};
 
     	for (let i = 0; i < report_spread_levels.length; i += 1) {
@@ -19740,8 +20346,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			const report_changes = (dirty & /*reports*/ 4)
-    			? get_spread_update(report_spread_levels, [get_spread_object(/*report*/ ctx[4])])
+    			const report_changes = (dirty & /*reports*/ 2)
+    			? get_spread_update(report_spread_levels, [get_spread_object(/*report*/ ctx[6])])
     			: {};
 
     			report.$set(report_changes);
@@ -19764,7 +20370,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(29:2) {#each reports as report}",
+    		source: "(48:2) {#each reports as report}",
     		ctx
     	});
 
@@ -19785,7 +20391,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let each_value = /*reports*/ ctx[2];
+    	let each_value = /*reports*/ ctx[1];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -19816,19 +20422,20 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(h1, file$8, 19, 0, 410);
+    			add_location(h1, file$8, 38, 0, 1272);
     			attr_dev(input, "type", "text");
+    			attr_dev(input, "placeholder", "Search by address, domain, or tags");
     			attr_dev(input, "class", "svelte-53e6kj");
-    			add_location(input, file$8, 21, 2, 461);
+    			add_location(input, file$8, 40, 2, 1323);
     			attr_dev(button, "class", "svelte-53e6kj");
-    			add_location(button, file$8, 22, 2, 506);
+    			add_location(button, file$8, 41, 2, 1474);
     			attr_dev(i, "class", "icofont-search-2 svelte-53e6kj");
-    			add_location(i, file$8, 23, 2, 550);
+    			add_location(i, file$8, 42, 2, 1518);
     			attr_dev(div0, "class", "search-bar svelte-53e6kj");
-    			add_location(div0, file$8, 20, 0, 434);
+    			add_location(div0, file$8, 39, 0, 1296);
     			attr_dev(div1, "id", "reports");
     			attr_dev(div1, "class", "svelte-53e6kj");
-    			add_location(div1, file$8, 27, 0, 606);
+    			add_location(div1, file$8, 46, 0, 1574);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -19855,7 +20462,8 @@ var app = (function () {
     			if (!mounted) {
     				dispose = [
     					listen_dev(input, "input", /*input_input_handler*/ ctx[3]),
-    					listen_dev(button, "click", /*search*/ ctx[1], false, false, false)
+    					listen_dev(input, "keypress", /*keypress_handler*/ ctx[4], false, false, false),
+    					listen_dev(button, "click", /*search*/ ctx[2], false, false, false)
     				];
 
     				mounted = true;
@@ -19866,8 +20474,8 @@ var app = (function () {
     				set_input_value(input, /*searchStr*/ ctx[0]);
     			}
 
-    			if (dirty & /*reports*/ 4) {
-    				each_value = /*reports*/ ctx[2];
+    			if (dirty & /*reports*/ 2) {
+    				each_value = /*reports*/ ctx[1];
     				validate_each_argument(each_value);
     				let i;
 
@@ -19936,25 +20544,55 @@ var app = (function () {
     }
 
     function instance$9($$self, $$props, $$invalidate) {
+    	let $contract;
+    	validate_store(contract, 'contract');
+    	component_subscribe($$self, contract, $$value => $$invalidate(5, $contract = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Search', slots, []);
     	let searchStr;
 
     	const search = async () => {
+    		try {
+    			// TODO: actually implement search
+    			const c = $contract;
+
+    			if (c) {
+    				let filter = null;
+
+    				if (searchStr.startsWith("0x")) {
+    					filter = c.filters.ContractReported(null, searchStr);
+    				} else if (searchStr.includes(".")) {
+    					filter = c.filters.DomainReported(null, searchStr);
+    				} else {
+    					filter = c.filters.TagReported(null, searchStr);
+    				}
+
+    				const events = (await c.queryFilter(filter)).slice(-10);
+
+    				const newReports = await Promise.all(events.map(async e => {
+    					const report = await c.getReport(e.args.reportId);
+
+    					return report.published
+    					? {
+    							reportId: e.args.reportId,
+    							reviewer: report.reviewer,
+    							uri: report.uri
+    						}
+    					: null;
+    				}));
+
+    				$$invalidate(1, reports = newReports.filter(x => !!x));
+    			}
+    		} catch(err) {
+    			console.error(err);
+    		}
     	};
 
-    	const reports = [
-    		{
-    			reportId: 0,
-    			reviewer: "0xa184aa8488908b43cCf43b5Ef13Ae528693Dfd00",
-    			uri: "ipfs://bafkreieb5xpcpwatmqmm2eb6y2f72fx2yokapmrq75axqt3jdoc542dpd4"
-    		}
-    	];
-
+    	let reports = [];
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$1.warn(`<Search> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$3.warn(`<Search> was created with unknown prop '${key}'`);
     	});
 
     	function input_input_handler() {
@@ -19962,17 +20600,27 @@ var app = (function () {
     		$$invalidate(0, searchStr);
     	}
 
-    	$$self.$capture_state = () => ({ Report: Report$1, searchStr, search, reports });
+    	const keypress_handler = e => e.key === "Enter" ? search() : null;
+
+    	$$self.$capture_state = () => ({
+    		Report: Report$1,
+    		contract,
+    		searchStr,
+    		search,
+    		reports,
+    		$contract
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ('searchStr' in $$props) $$invalidate(0, searchStr = $$props.searchStr);
+    		if ('reports' in $$props) $$invalidate(1, reports = $$props.reports);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [searchStr, search, reports, input_input_handler];
+    	return [searchStr, reports, search, input_input_handler, keypress_handler];
     }
 
     class Search extends SvelteComponentDev {
@@ -20183,6 +20831,8 @@ var app = (function () {
     }
 
     /* src/routes/Report.svelte generated by Svelte v3.55.1 */
+
+    const { console: console_1$2 } = globals;
     const file$6 = "src/routes/Report.svelte";
 
     function create_fragment$7(ctx) {
@@ -20306,13 +20956,13 @@ var app = (function () {
     			t13 = space();
     			button = element("button");
     			button.textContent = "Submit";
-    			add_location(h1, file$6, 15, 0, 560);
-    			add_location(p, file$6, 17, 0, 584);
-    			add_location(li0, file$6, 21, 2, 697);
-    			add_location(li1, file$6, 24, 2, 812);
-    			add_location(li2, file$6, 27, 2, 912);
-    			add_location(ol, file$6, 20, 0, 690);
-    			add_location(button, file$6, 37, 0, 1463);
+    			add_location(h1, file$6, 27, 0, 1172);
+    			add_location(p, file$6, 29, 0, 1196);
+    			add_location(li0, file$6, 33, 2, 1309);
+    			add_location(li1, file$6, 36, 2, 1424);
+    			add_location(li2, file$6, 39, 2, 1524);
+    			add_location(ol, file$6, 32, 0, 1302);
+    			add_location(button, file$6, 49, 0, 2075);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -20434,6 +21084,9 @@ var app = (function () {
     	let contractAddresses;
     	let domains;
     	let tags;
+    	let $contract;
+    	validate_store(contract, 'contract');
+    	component_subscribe($$self, contract, $$value => $$invalidate(12, $contract = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Report', slots, []);
     	let uri = "";
@@ -20442,16 +21095,41 @@ var app = (function () {
     	let tagsStr = "";
 
     	const submitReport = async () => {
-    		pushNotification({
-    			message: "not implemented yet",
-    			type: "error"
-    		});
+    		try {
+    			console.log(contractAddresses, domains, tags);
+
+    			if (!$contract) return pushNotification({
+    				message: "Not connected...",
+    				type: "warning"
+    			});
+
+    			const tx = await $contract.publishReport(contractAddresses, domains, tags, uri);
+
+    			pushNotification({
+    				message: "Submitting transaction...",
+    				type: "standard"
+    			});
+
+    			const receipt = await tx.wait();
+
+    			pushNotification({
+    				message: "Transaction submitted!",
+    				type: "success"
+    			});
+    		} catch(err) {
+    			console.error(err);
+
+    			pushNotification({
+    				message: "Failed to submit report...",
+    				type: "error"
+    			});
+    		}
     	};
 
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Report> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$2.warn(`<Report> was created with unknown prop '${key}'`);
     	});
 
     	function textinput0_value_binding(value) {
@@ -20477,6 +21155,7 @@ var app = (function () {
     	$$self.$capture_state = () => ({
     		pushNotification,
     		TextInput,
+    		contract,
     		uri,
     		contractAddressesStr,
     		domainsStr,
@@ -20484,7 +21163,8 @@ var app = (function () {
     		submitReport,
     		tags,
     		domains,
-    		contractAddresses
+    		contractAddresses,
+    		$contract
     	});
 
     	$$self.$inject_state = $$props => {
@@ -20503,15 +21183,15 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*contractAddressesStr*/ 1) {
-    			contractAddresses = contractAddressesStr.split(',').map(x => x.trim());
+    			contractAddresses = contractAddressesStr.split(',').map(x => x.trim()).filter(x => !!x);
     		}
 
     		if ($$self.$$.dirty & /*domainsStr*/ 2) {
-    			domains = domainsStr.split(',').map(x => x.trim());
+    			domains = domainsStr.split(',').map(x => x.trim()).filter(x => !!x);
     		}
 
     		if ($$self.$$.dirty & /*tagsStr*/ 4) {
-    			tags = tagsStr.split(',').map(x => x.trim());
+    			tags = tagsStr.split(',').map(x => x.trim()).filter(x => !!x);
     		}
     	};
 
@@ -20543,23 +21223,25 @@ var app = (function () {
     }
 
     /* src/routes/Certificate.svelte generated by Svelte v3.55.1 */
+
+    const { console: console_1$1 } = globals;
     const file$5 = "src/routes/Certificate.svelte";
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[11] = list[i];
-    	child_ctx[12] = list;
-    	child_ctx[13] = i;
+    	child_ctx[16] = list[i];
+    	child_ctx[17] = list;
+    	child_ctx[18] = i;
     	return child_ctx;
     }
 
-    // (31:0) {#if myAuthorityCerts.length > 0}
+    // (83:0) {#if myAuthorityCerts.length > 0}
     function create_if_block$1(ctx) {
     	let h1;
     	let t1;
     	let each_1_anchor;
     	let current;
-    	let each_value = /*myAuthorityCerts*/ ctx[3];
+    	let each_value = /*myAuthorityCerts*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
 
@@ -20582,7 +21264,7 @@ var app = (function () {
     			}
 
     			each_1_anchor = empty$1();
-    			add_location(h1, file$5, 31, 2, 848);
+    			add_location(h1, file$5, 83, 2, 3084);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -20596,8 +21278,8 @@ var app = (function () {
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*revoke, issue, issueTo, myAuthorityCerts*/ 58) {
-    				each_value = /*myAuthorityCerts*/ ctx[3];
+    			if (dirty & /*revoke, myAuthorityCerts, issueToProxy, issue, issueTo*/ 117) {
+    				each_value = /*myAuthorityCerts*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
 
@@ -20654,18 +21336,18 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(31:0) {#if myAuthorityCerts.length > 0}",
+    		source: "(83:0) {#if myAuthorityCerts.length > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (33:2) {#each myAuthorityCerts as cert, i}
+    // (85:2) {#each myAuthorityCerts as cert, i}
     function create_each_block(ctx) {
     	let div1;
     	let h3;
-    	let t0_value = (/*cert*/ ctx[11].name ?? `Cert #${/*cert*/ ctx[11].id}`) + "";
+    	let t0_value = (/*cert*/ ctx[16].name ?? `Cert #${/*cert*/ ctx[16].id}`) + "";
     	let t0;
     	let t1;
     	let textinput;
@@ -20681,7 +21363,7 @@ var app = (function () {
     	let dispose;
 
     	function textinput_value_binding_1(value) {
-    		/*textinput_value_binding_1*/ ctx[8](value, /*i*/ ctx[13]);
+    		/*textinput_value_binding_1*/ ctx[10](value, /*i*/ ctx[18]);
     	}
 
     	let textinput_props = {
@@ -20689,12 +21371,20 @@ var app = (function () {
     		placeholder: "0x1234..."
     	};
 
-    	if (/*issueTo*/ ctx[1][/*i*/ ctx[13]] !== void 0) {
-    		textinput_props.value = /*issueTo*/ ctx[1][/*i*/ ctx[13]];
+    	if (/*issueTo*/ ctx[2][/*i*/ ctx[18]] !== void 0) {
+    		textinput_props.value = /*issueTo*/ ctx[2][/*i*/ ctx[18]];
     	}
 
     	textinput = new TextInput({ props: textinput_props, $$inline: true });
     	binding_callbacks.push(() => bind(textinput, 'value', textinput_value_binding_1));
+
+    	function click_handler() {
+    		return /*click_handler*/ ctx[11](/*cert*/ ctx[16], /*i*/ ctx[18]);
+    	}
+
+    	function click_handler_1() {
+    		return /*click_handler_1*/ ctx[12](/*cert*/ ctx[16], /*i*/ ctx[18]);
+    	}
 
     	const block = {
     		c: function create() {
@@ -20711,13 +21401,13 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Revoke";
     			t6 = space();
-    			attr_dev(h3, "class", "svelte-1um3wya");
-    			add_location(h3, file$5, 34, 6, 944);
-    			add_location(button0, file$5, 37, 8, 1091);
-    			add_location(button1, file$5, 38, 8, 1139);
-    			add_location(div0, file$5, 36, 6, 1077);
-    			attr_dev(div1, "class", "cert svelte-1um3wya");
-    			add_location(div1, file$5, 33, 4, 919);
+    			attr_dev(h3, "class", "svelte-1pd03wt");
+    			add_location(h3, file$5, 86, 6, 3180);
+    			add_location(button0, file$5, 89, 8, 3327);
+    			add_location(button1, file$5, 90, 8, 3407);
+    			add_location(div0, file$5, 88, 6, 3313);
+    			attr_dev(div1, "class", "cert svelte-1pd03wt");
+    			add_location(div1, file$5, 85, 4, 3155);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -20735,8 +21425,8 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(button0, "click", /*issue*/ ctx[4], false, false, false),
-    					listen_dev(button1, "click", /*revoke*/ ctx[5], false, false, false)
+    					listen_dev(button0, "click", click_handler, false, false, false),
+    					listen_dev(button1, "click", click_handler_1, false, false, false)
     				];
 
     				mounted = true;
@@ -20744,11 +21434,12 @@ var app = (function () {
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
+    			if ((!current || dirty & /*myAuthorityCerts*/ 1) && t0_value !== (t0_value = (/*cert*/ ctx[16].name ?? `Cert #${/*cert*/ ctx[16].id}`) + "")) set_data_dev(t0, t0_value);
     			const textinput_changes = {};
 
-    			if (!updating_value && dirty & /*issueTo*/ 2) {
+    			if (!updating_value && dirty & /*issueTo*/ 4) {
     				updating_value = true;
-    				textinput_changes.value = /*issueTo*/ ctx[1][/*i*/ ctx[13]];
+    				textinput_changes.value = /*issueTo*/ ctx[2][/*i*/ ctx[18]];
     				add_flush_callback(() => updating_value = false);
     			}
 
@@ -20775,7 +21466,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(33:2) {#each myAuthorityCerts as cert, i}",
+    		source: "(85:2) {#each myAuthorityCerts as cert, i}",
     		ctx
     	});
 
@@ -20796,18 +21487,18 @@ var app = (function () {
     	let dispose;
 
     	function textinput_value_binding(value) {
-    		/*textinput_value_binding*/ ctx[7](value);
+    		/*textinput_value_binding*/ ctx[9](value);
     	}
 
     	let textinput_props = { label: "Certificate Name" };
 
-    	if (/*certName*/ ctx[0] !== void 0) {
-    		textinput_props.value = /*certName*/ ctx[0];
+    	if (/*certName*/ ctx[1] !== void 0) {
+    		textinput_props.value = /*certName*/ ctx[1];
     	}
 
     	textinput = new TextInput({ props: textinput_props, $$inline: true });
     	binding_callbacks.push(() => bind(textinput, 'value', textinput_value_binding));
-    	let if_block = /*myAuthorityCerts*/ ctx[3].length > 0 && create_if_block$1(ctx);
+    	let if_block = /*myAuthorityCerts*/ ctx[0].length > 0 && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -20821,8 +21512,8 @@ var app = (function () {
     			t4 = space();
     			if (if_block) if_block.c();
     			if_block_anchor = empty$1();
-    			add_location(h1, file$5, 25, 0, 673);
-    			add_location(button, file$5, 28, 0, 765);
+    			add_location(h1, file$5, 77, 0, 2909);
+    			add_location(button, file$5, 80, 0, 3001);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -20839,21 +21530,43 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*createCert*/ ctx[2], false, false, false);
+    				dispose = listen_dev(button, "click", /*createCert*/ ctx[3], false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
     			const textinput_changes = {};
 
-    			if (!updating_value && dirty & /*certName*/ 1) {
+    			if (!updating_value && dirty & /*certName*/ 2) {
     				updating_value = true;
-    				textinput_changes.value = /*certName*/ ctx[0];
+    				textinput_changes.value = /*certName*/ ctx[1];
     				add_flush_callback(() => updating_value = false);
     			}
 
     			textinput.$set(textinput_changes);
-    			if (/*myAuthorityCerts*/ ctx[3].length > 0) if_block.p(ctx, dirty);
+
+    			if (/*myAuthorityCerts*/ ctx[0].length > 0) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*myAuthorityCerts*/ 1) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -20892,10 +21605,12 @@ var app = (function () {
     }
 
     function instance$6($$self, $$props, $$invalidate) {
-    	let issueTo;
+    	let $contract;
     	let $signer;
+    	validate_store(contract, 'contract');
+    	component_subscribe($$self, contract, $$value => $$invalidate(7, $contract = $$value));
     	validate_store(signer, 'signer');
-    	component_subscribe($$self, signer, $$value => $$invalidate(6, $signer = $$value));
+    	component_subscribe($$self, signer, $$value => $$invalidate(8, $signer = $$value));
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Certificate', slots, []);
     	let certName = "";
@@ -20904,66 +21619,167 @@ var app = (function () {
     	const updateCerts = async () => {
     		if ($signer) {
     			signerAddress = await $signer.getAddress();
+
+    			if ($contract) {
+    				const filter = $contract.filters.CreateCertificate(null, signerAddress);
+    				const events = await $contract.queryFilter(filter);
+
+    				$$invalidate(0, myAuthorityCerts = events.map(e => {
+    					return {
+    						id: e.args.certificateId,
+    						name: e.args.name
+    					};
+    				}));
+    			} else {
+    				$$invalidate(0, myAuthorityCerts = []);
+    			}
     		} else {
     			signerAddress = undefined;
     		}
     	};
 
     	const createCert = async () => {
-    		
+    		try {
+    			if (!$contract) return pushNotification({
+    				message: "Not connected...",
+    				type: "warning"
+    			});
+
+    			const tx = await $contract.createCertificate(certName);
+
+    			pushNotification({
+    				message: "Submitting transaction...",
+    				type: "standard"
+    			});
+
+    			const receipt = await tx.wait();
+
+    			pushNotification({
+    				message: "Transaction submitted!",
+    				type: "success"
+    			});
+
+    			await updateCerts();
+    		} catch(err) {
+    			console.error(err);
+
+    			pushNotification({
+    				message: "Failed to create certificate...",
+    				type: "error"
+    			});
+    		}
     	};
 
     	let myAuthorityCerts = [];
+    	let issueTo = [];
+    	const resetIssueTo = () => $$invalidate(2, issueTo = myAuthorityCerts.map(() => ""));
+    	const issueToProxy = i => issueTo[i];
 
-    	const issue = async () => {
-    		
+    	const issue = async (certificateId, reviewer) => {
+    		try {
+    			if (!$contract) return pushNotification({
+    				message: "Not connected...",
+    				type: "warning"
+    			});
+
+    			const tx = await $contract.issueCertificate(certificateId, reviewer);
+
+    			pushNotification({
+    				message: "Submitting transaction...",
+    				type: "standard"
+    			});
+
+    			const receipt = await tx.wait();
+
+    			pushNotification({
+    				message: "Transaction submitted!",
+    				type: "success"
+    			});
+    		} catch(err) {
+    			console.error(err);
+
+    			pushNotification({
+    				message: "Failed to issue certificate...",
+    				type: "error"
+    			});
+    		}
     	};
 
-    	const revoke = async () => {
-    		pushNotification({
-    			message: "not implemented",
-    			type: "error"
-    		});
+    	const revoke = async (certificateId, reviewer) => {
+    		try {
+    			if (!$contract) return pushNotification({
+    				message: "Not connected...",
+    				type: "warning"
+    			});
+
+    			const tx = await $contract.revokeCertificate(certificateId, reviewer);
+
+    			pushNotification({
+    				message: "Submitting transaction...",
+    				type: "standard"
+    			});
+
+    			const receipt = await tx.wait();
+
+    			pushNotification({
+    				message: "Transaction submitted!",
+    				type: "success"
+    			});
+    		} catch(err) {
+    			console.error(err);
+
+    			pushNotification({
+    				message: "Failed to revoke certificate...",
+    				type: "error"
+    			});
+    		}
     	};
 
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<Certificate> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console_1$1.warn(`<Certificate> was created with unknown prop '${key}'`);
     	});
 
     	function textinput_value_binding(value) {
     		certName = value;
-    		$$invalidate(0, certName);
+    		$$invalidate(1, certName);
     	}
 
     	function textinput_value_binding_1(value, i) {
     		if ($$self.$$.not_equal(issueTo[i], value)) {
     			issueTo[i] = value;
-    			($$invalidate(1, issueTo), $$invalidate(3, myAuthorityCerts));
+    			$$invalidate(2, issueTo);
     		}
     	}
+
+    	const click_handler = (cert, i) => issue(cert.id, issueToProxy(i));
+    	const click_handler_1 = (cert, i) => revoke(cert.id, issueToProxy(i));
 
     	$$self.$capture_state = () => ({
     		pushNotification,
     		TextInput,
+    		contract,
     		signer,
     		certName,
     		signerAddress,
     		updateCerts,
     		createCert,
     		myAuthorityCerts,
+    		issueTo,
+    		resetIssueTo,
+    		issueToProxy,
     		issue,
     		revoke,
-    		issueTo,
+    		$contract,
     		$signer
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ('certName' in $$props) $$invalidate(0, certName = $$props.certName);
+    		if ('certName' in $$props) $$invalidate(1, certName = $$props.certName);
     		if ('signerAddress' in $$props) signerAddress = $$props.signerAddress;
-    		if ('myAuthorityCerts' in $$props) $$invalidate(3, myAuthorityCerts = $$props.myAuthorityCerts);
-    		if ('issueTo' in $$props) $$invalidate(1, issueTo = $$props.issueTo);
+    		if ('myAuthorityCerts' in $$props) $$invalidate(0, myAuthorityCerts = $$props.myAuthorityCerts);
+    		if ('issueTo' in $$props) $$invalidate(2, issueTo = $$props.issueTo);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -20971,23 +21787,29 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*$signer*/ 64) {
+    		if ($$self.$$.dirty & /*$signer, $contract*/ 384) {
     			(updateCerts());
+    		}
+
+    		if ($$self.$$.dirty & /*myAuthorityCerts*/ 1) {
+    			(resetIssueTo());
     		}
     	};
 
-    	$$invalidate(1, issueTo = myAuthorityCerts.map(() => ""));
-
     	return [
+    		myAuthorityCerts,
     		certName,
     		issueTo,
     		createCert,
-    		myAuthorityCerts,
+    		issueToProxy,
     		issue,
     		revoke,
+    		$contract,
     		$signer,
     		textinput_value_binding,
-    		textinput_value_binding_1
+    		textinput_value_binding_1,
+    		click_handler,
+    		click_handler_1
     	];
     }
 
@@ -21092,6 +21914,8 @@ var app = (function () {
     const file$3 = "src/components/Page.svelte";
 
     function create_fragment$4(ctx) {
+    	let div1;
+    	let div0;
     	let main;
     	let router;
     	let current;
@@ -21099,16 +21923,24 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
     			main = element("main");
     			create_component(router.$$.fragment);
-    			attr_dev(main, "class", "gradient-1-2 svelte-8b4553");
-    			add_location(main, file$3, 4, 0, 105);
+    			attr_dev(main, "class", "svelte-12e5hg3");
+    			add_location(main, file$3, 6, 4, 170);
+    			attr_dev(div0, "class", "wrapper svelte-12e5hg3");
+    			add_location(div0, file$3, 5, 2, 144);
+    			attr_dev(div1, "class", "container gradient-1-2 svelte-12e5hg3");
+    			add_location(div1, file$3, 4, 0, 105);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, main, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			append_dev(div0, main);
     			mount_component(router, main, null);
     			current = true;
     		},
@@ -21123,7 +21955,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(main);
+    			if (detaching) detach_dev(div1);
     			destroy_component(router);
     		}
     	};
