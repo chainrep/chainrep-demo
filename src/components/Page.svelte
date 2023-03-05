@@ -3,15 +3,28 @@
   import { routes } from "../routes";
 </script>
 
-<main class="gradient-1-2">
-  <Router {routes} />
-</main>
+<div class="container gradient-1-2">
+  <div class="wrapper">
+    <main>
+      <Router {routes} />
+    </main>
+  </div>
+</div>
 
 <style>
-  main {
-    flex-grow: 1;
-    padding: 2rem 5rem;
-    overflow: auto;
+  div.container {
+    flex: 1 1 0;
     box-shadow: inset 3px 3px 7px var(--shadow-color);
+    position: relative;
+  }
+  
+  div.wrapper {
+    position: absolute;
+    inset: 0;
+    overflow: auto;
+  }
+
+  main {
+    padding: 2rem 5rem;
   }
 </style>
