@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { pushNotification } from "../components/Notifications.svelte";
-    import TextInput from "../components/TextInput.svelte";
-  import { signer } from "../utils/connection";
+  import TextInput from "../components/TextInput.svelte";
+  import { contract } from "../utils/connection";
 
   let uri: string = "";
   let contractAddressesStr: string = "";
@@ -13,7 +13,17 @@
   $: tags = tagsStr.split(',').map(x => x.trim());
 
   const submitReport = async () => {
-    pushNotification({ message: "not implemented yet", type: "error" });
+    try {
+      console.log(contractAddresses, domains, tags);
+      if(!$contract) return pushNotification({ message: "Not connected...", type: "warning" });
+      const tx = await $contract.publishReport(contractAddresses, domains, tags, uri);
+      pushNotification({ message: "Submitting transaction...", type: "standard" });
+      const receipt = await tx.wait();
+      pushNotification({ message: "Transaction submitted!", type: "success" });
+    } catch(err) {
+      console.error(err);
+      pushNotification({ message: "Failed to submit report...", type: "error" });
+    }
   };
 </script>
 
