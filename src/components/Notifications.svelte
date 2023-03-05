@@ -106,7 +106,7 @@
   }
 
   .standard {
-    background-color: dodgerblue;
+    background-color: var(--c4);
     color: white;
   }
 
