@@ -17,13 +17,11 @@
     display: block;
     appearance: none;
     padding: 1rem 2rem;
-    border: 1px solid #ccc;
     border-radius: var(--border-radius);
     color: var(--c4);
     font-size: large;
     font-weight: bold;
     text-decoration: none;
-    /* box-shadow: 2px 2px var(--c0); */
     z-index: 1;
   }
 
@@ -41,5 +39,9 @@
     inset: -5px;
     background-color: var(--c3);
     border-radius: var(--border-radius);
+  }
+
+  .nav-link.selected > a {
+    background: var(--c0);
   }
 </style>
