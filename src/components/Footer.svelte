@@ -4,7 +4,7 @@
 
 <footer>
   <div>
-    ChainRep is an open-source protocol to democratize web3 user security.
+    ChainRep is an open-source protocol to democratize web3 security.
   </div>
   <div id="links">
     <a href="#" target="_blank" rel="noreferrer">
