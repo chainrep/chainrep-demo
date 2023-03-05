@@ -7,10 +7,10 @@
     ChainRep is an open-source protocol to democratize web3 security.
   </div>
   <div id="links">
-    <a href="#" target="_blank" rel="noreferrer">
+    <a href="https://github.com/chainrep" target="_blank" rel="noreferrer">
       <img src="img/github.svg" alt="github">
     </a>
-    <a href="#" target="_blank" rel="noreferrer">
+    <a href="https://discord.gg/Wyv2pVTt" target="_blank" rel="noreferrer">
       <img src="img/discord.svg" alt="discord">
     </a>
   </div>
