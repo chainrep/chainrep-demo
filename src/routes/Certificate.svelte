@@ -35,6 +35,7 @@
       pushNotification({ message: "Submitting transaction...", type: "standard" });
       const receipt = await tx.wait();
       pushNotification({ message: "Transaction submitted!", type: "success" });
+      await updateCerts();
     } catch(err) {
       console.error(err);
       pushNotification({ message: "Failed to create certificate...", type: "error" });
