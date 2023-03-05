@@ -1,7 +1,7 @@
 <script lang="ts">
   import { link, location } from "svelte-spa-router";
 
-  $: loc = ($location === "/" ? "/about" : location);
+  $: loc = ($location === "/" ? "/about" : $location);
 
   export let page: string;
   export let name: string;
