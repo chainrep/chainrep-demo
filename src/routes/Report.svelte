@@ -8,9 +8,9 @@
   let domainsStr: string = "";
   let tagsStr: string = "";
 
-  $: contractAddresses = contractAddressesStr.split(',').map(x => x.trim());
-  $: domains = domainsStr.split(',').map(x => x.trim());
-  $: tags = tagsStr.split(',').map(x => x.trim());
+  $: contractAddresses = contractAddressesStr.split(',').map(x => x.trim()).filter(x => !!x);
+  $: domains = domainsStr.split(',').map(x => x.trim()).filter(x => !!x);
+  $: tags = tagsStr.split(',').map(x => x.trim()).filter(x => !!x);
 
   const submitReport = async () => {
     try {
